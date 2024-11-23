@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 import subprocess
 import requests
+import datetime
 
 app = Flask(__name__)
 default = {"promoter": None, "promotee": None, "newrank": None}
@@ -11,6 +12,24 @@ fields = default
 def get_something():
     return {"kevin": "noob"}, 200
 
+@app.get("/activityjoin")
+def activity_join():
+    if request.is_json:
+        data = request.get_json()
+        username = data["username"]
+        url = "https://discord.com/api/webhooks/1265837574270877808/IpOVA5SCdsGh_bCeksEeObMK9a0_OvaRFfQ7yvPrtM4NwGn0hxuDx-WTRRfeDthJ910G"
+        embeddata = {"content: "", "username": "Bloxxed User Detection"}
+        embed["embeds"] = [{
+            "title": "User Joined",
+            "description": "",
+            "fields":[{
+            "name": "**Username**,
+            "value": str(username),
+            "inline": True},
+            {
+            "name": "Time Joined (UTC)",
+            "value": str(datetime.datetime.now()),
+            "inline": True}]
 
 @app.post("/rank")
 def rank_request():
