@@ -17,7 +17,7 @@ def activity_join():
     if request.is_json:
         data = request.get_json()
         username = data["username"]
-        url = "https://discord.com/api/webhooks/1265837574270877808/IpOVA5SCdsGh_bCeksEeObMK9a0_OvaRFfQ7yvPrtM4NwGn0hxuDx-WTRRfeDthJ910G"
+        url = "https://discord.com/api/webhooks/1268724664910479380/VWfjl7xwVd56Uw4hFGwLeBrFQCOi0QHE__hneLDYfpItQjbeakzmHtJ7vrGtBFcq-U64"
         embeddata = {"content: "", "username": "Bloxxed User Detection"}
         embed["embeds"] = [{
             "title": "User Joined",
